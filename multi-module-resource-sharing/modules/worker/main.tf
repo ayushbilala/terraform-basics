@@ -16,7 +16,7 @@ resource "google_compute_instance" "vm_instance" {
 
   network_interface {
     # A default network is created for all GCP projects
-    network       = "${data.terraform_remote_state.myvpc.vpc_net}"
+    network       = "${data.terraform_remote_state.vpc.outputs.link}"
     access_config {
     }
   }
